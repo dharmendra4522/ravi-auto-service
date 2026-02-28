@@ -73,7 +73,7 @@ If you need to run this project locally for future maintenance:
    npm run dev
    ```
 
-5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [https://ravi-auto-service.vercel.app/](https://ravi-auto-service.vercel.app/) with your browser to see the result.
 
 
 ## 🔒 Admin Access
