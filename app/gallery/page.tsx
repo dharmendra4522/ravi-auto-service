@@ -17,7 +17,7 @@ const GalleryPage: React.FC = () => {
                         From the <span className="text-primary not-italic">Workshop</span>
                     </h1>
                     <p className="text-muted text-lg leading-relaxed">
-                        A glimpse into our daily work, the tools we use, and snapshots of bikes we've successfully serviced and restored to their former glory.
+                        A glimpse into our daily work, the tools we use, and snapshots of bikes we&apos;ve successfully serviced and restored to their former glory.
                     </p>
                 </div>
 

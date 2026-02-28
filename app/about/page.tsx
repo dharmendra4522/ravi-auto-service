@@ -40,7 +40,7 @@ const AboutPage: React.FC = () => {
                                     Founded in 2019, {SHOP_INFO.name} started with a single goal: to provide high-quality, transparent, and affordable two-wheeler maintenance to the people of Navi Mumbai.
                                 </p>
                                 <p className="text-muted leading-relaxed">
-                                    What began as a small workshop in Ghansoli Gaon has grown into a trusted name for riders across the city. We believe that a bike isn't just a machine; for many, it's their livelihood and passion. That's why we treat every machine with the same precision and care we'd give our own.
+                                    What began as a small workshop in Ghansoli Gaon has grown into a trusted name for riders across the city. We believe that a bike isn&apos;t just a machine; for many, it&apos;s their livelihood and passion. That&apos;s why we treat every machine with the same precision and care we&apos;d give our own.
                                 </p>
                             </div>
 

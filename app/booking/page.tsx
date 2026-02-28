@@ -43,7 +43,7 @@ export default function BookingPage({
                                 </div>
                                 <div>
                                     <h4 className="text-light font-bold mb-1">Instant Confirmation</h4>
-                                    <p className="text-muted text-sm">Once you book, we'll call you to confirm the exact time slot.</p>
+                                    <p className="text-muted text-sm">Once you book, we&apos;ll call you to confirm the exact time slot.</p>
                                 </div>
                             </div>
 

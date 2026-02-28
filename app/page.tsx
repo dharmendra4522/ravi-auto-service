@@ -51,7 +51,7 @@ export default function Home() {
                             Why <span className="text-primary not-italic">Ravi Auto Service</span>?
                         </h2>
                         <p className="text-muted leading-relaxed">
-                            We combine years of experience with modern tools to provide your bike the care it deserves. Our transparent process ensures you know exactly what's happening with your machine.
+                            We combine years of experience with modern tools to provide your bike the care it deserves. Our transparent process ensures you know exactly what&apos;s happening with your machine.
                         </p>
                     </div>
 
@@ -81,7 +81,7 @@ export default function Home() {
                         Is your bike due for a <span className="text-dark">checkup</span>?
                     </h2>
                     <p className="text-white/80 text-lg mb-12 max-w-2xl mx-auto font-medium">
-                        Don't wait for a breakdown. Book a professional service today and experience the difference in performance.
+                        Don&apos;t wait for a breakdown. Book a professional service today and experience the difference in performance.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-6">
                         <Link

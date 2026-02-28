@@ -16,7 +16,7 @@ const ContactPage: React.FC = () => {
                 <div className="text-center max-w-3xl mx-auto mb-20">
                     <span className="text-primary text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Get In Touch</span>
                     <h1 className="font-heading text-5xl md:text-6xl font-bold text-white uppercase italic mb-6">
-                        We're Here to <span className="text-primary not-italic">Help</span>
+                        We&apos;re Here to <span className="text-primary not-italic">Help</span>
                     </h1>
                     <p className="text-muted text-lg leading-relaxed">
                         Have a question about your bike or want to get a quote? Reach out to us through any of the channels below or fill out the form.

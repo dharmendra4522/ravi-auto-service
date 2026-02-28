@@ -37,7 +37,7 @@ const HeroSection: React.FC = () => {
                             <div className="absolute -inset-4 bg-dark/20 backdrop-blur-sm rounded-3xl -z-10" />
                             <p className="text-white/90 text-lg md:text-xl max-w-xl leading-relaxed font-medium">
                                 Fast, reliable and affordable two-wheeler servicing in <span className="text-primary font-bold">{SHOP_INFO.address.city}</span>.
-                                We treat your bike like it's our own with genuine parts and expert care.
+                                We treat your bike like it&apos;s our own with genuine parts and expert care.
                             </p>
                         </div>
 

@@ -86,7 +86,7 @@ const TestimonialsSlider: React.FC = () => {
                             </div>
 
                             <p className="text-light/90 italic leading-relaxed flex-grow">
-                                "{t.text}"
+                                &quot;{t.text}&quot;
                             </p>
 
                             <div className="flex items-center gap-4 mt-4">
