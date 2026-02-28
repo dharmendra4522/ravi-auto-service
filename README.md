@@ -1,94 +1,87 @@
-# Ravi Auto Service - Bike Repairing Center Website
+# Ravi Auto Service 🏍️🛠️
 
-A modern, production-ready full-stack website built with Next.js 14, Tailwind CSS, and MongoDB.
+A modern, high-performance web application designed and developed for **Ravi Auto Service** – a premium two-wheeler repair and servicing workshop located in Navi Mumbai. This project was built as a proprietary freelancing solution to digitize the client's business, streamline service bookings, and enhance local online presence.
 
-## 🚀 Features
+## 🌟 Overview
 
-- **Responsive Design**: Full mobile-first experience.
-- **Appointment Booking**: Online booking form with Zod validation.
-- **WhatsApp Integration**: Direct booking confirmations via WhatsApp links.
-- **Services Showcase**: Detailed listing of all bike services.
-- **Photo Gallery**: Masonry grid with filtering and lightbox for workshop photos.
-- **Contact System**: Integration for customer queries saved directly to database.
-- **SEO Optimized**: Metadata and schema-ready for local business visibility.
-- **Premium Aesthetics**: Dark theme with red/orange accents and smooth animations.
+Ravi Auto Service is a comprehensive booking and management platform tailored for a motorcycle mechanic workshop. It allows customers to explore available services, view a gallery of past work, and effortlessly book service appointments online (with both pickup/drop capabilities and workshop visits). 
 
-## 🛠️ Tech Stack
+On the flip side, the platform provides a robust **Admin Panel** exclusively for the shop owner to manage bookings, view customer messages, and track repair statuses efficiently.
 
-- **Frontend**: Next.js 14 (App Router)
-- **Styling**: Tailwind CSS + Framer Motion
-- **Database**: MongoDB with Mongoose
-- **Form Handling**: React Hook Form + Zod
-- **Icons**: Lucide React
-- **Slider**: Swiper.js
+## 🚀 Key Features
 
-## ⚙️ Setup Instructions
+### For Customers (Client-Facing)
+- **Modern UI/UX:** A stunning, responsive, and dark-themed visual experience highlighting the workshop's expertise.
+- **Service Catalog:** Detailed overview of all repair and maintenance services along with starting prices.
+- **Online Booking System:** Customers can request a service, choose preferred dates, and opt for home pickup/drop.
+- **Dynamic Gallery:** A showcase of high-quality local workshop and bike-repair images.
+- **Contact & Location Info:** Direct WhatsApp integration, click-to-call functionality, and integrated Google Maps.
 
-### 1. External Dependencies
-Ensure you have the following installed:
-- Node.js (v18+)
-- MongoDB Atlas Account (or local MongoDB)
+### For The Shop Owner (Admin Panel)
+- **Secure Authentication:** Protected admin routes utilizing NextAuth.js.
+- **Dashboard Overview:** At-a-glance metrics of total bookings, pending requests, and new messages.
+- **Booking Management:** 
+  - View full customer and bike details.
+  - Update service status (Pending -> Confirmed -> Completed).
+  - One-click WhatsApp message dispatch to notify customers about their bike.
+  - Delete/Cancel bookings with custom modal confirmations.
+- **Customer Messages:** Dedicated section to read and manage inquiries sent through the Contact Us form.
 
-### 2. Environment Variables
-Create a `.env.local` file in the root directory (one has been pre-created for you with placeholders):
-```env
-MONGODB_URI=your_mongodb_connection_string
-NEXT_PUBLIC_WHATSAPP_NUMBER=918097901003
-NEXT_PUBLIC_SHOP_PHONE1=8097901003
-NEXT_PUBLIC_SHOP_PHONE2=8850527356
-NEXT_PUBLIC_SHOP_ADDRESS=Shop No. 1243/001...
-```
+## 💻 Tech Stack
 
-### 3. Installation
-```bash
-npm install
-```
+This project leverages modern web technologies for maximum performance, SEO, and maintainability:
 
-### 4. Run Locally
-```bash
-npm run dev
-```
+- **Frontend:** [Next.js 14](https://nextjs.org/) (App Router), React, TypeScript
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Icons & Animations:** Lucide React, Framer Motion
+- **Database:** [MongoDB](https://www.mongodb.com/) (Mongoose ODM)
+- **Authentication:** [NextAuth.js](https://next-auth.js.org/)
+- **Notifications:** React Hot Toast
+- **Deployment:** [Vercel](https://vercel.com/)
 
-### 5. Build for Production
-```bash
-npm run build
-npm start
-```
 
-## 📁 Project Structure
+## ⚙️ Local Development Setup
 
-- `/app`: Pages and API routes.
-- `/components`: Reusable UI components.
-- `/lib`: Database connection, models, and constants.
-- `/public`: Static assets (images, icons).
+If you need to run this project locally for future maintenance:
 
-## 🏪 Business Info
-- **Business Name**: Ravi Auto Service
-- **Location**: Ghansoli Gaon, Navi Mumbai
-- **Working Hours**: Mon–Sat: 9:00 AM – 7:00 PM, Sun: 10:00 AM – 4:00 PM
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/dharmendra4522/ravi-auto-service.git
+   cd ravi-auto-service
+   ```
 
-## Admin Panel Setup
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-### Step 1: Add env variables to .env.local
-NEXTAUTH_SECRET=ravi-auto-service-super-secret-key-2024
-NEXTAUTH_URL=http://localhost:3000
+3. **Set up environment variables:**
+   Create a `.env.local` file in the root directory and add the following:
+   ```env
+   MONGODB_URI=your_mongodb_connection_string
+   NEXTAUTH_SECRET=your_generated_secret_key
+   NEXTAUTH_URL=http://localhost:3000
+   
+   # Shop Specific Data
+   NEXT_PUBLIC_SHOP_PHONE1=8097901003
+   NEXT_PUBLIC_SHOP_PHONE2=8850527356
+   NEXT_PUBLIC_WHATSAPP_NUMBER=918097901003
+   ```
 
-### Step 2: Create admin user (run ONCE)
-Start the dev server: npm run dev
-Visit: http://localhost:3000/api/admin/seed
-You should see: "Admin user created!"
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
 
-### Step 3: Delete the seed file
-Delete: app/api/admin/seed/route.js
-(Important! Don't leave this open in production)
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Step 4: Login
-Visit: http://localhost:3000/admin/login
-Username: admin
-Password: ravi@admin123
 
-### Step 5: Change password after first login
-Go to Settings → Change Password
+## 🔒 Admin Access
+
+The Admin Panel is hidden from regular users to prevent unnecessary access attempts. 
+It can be accessed by clicking the **Copyright (©)** symbol in the bottom footer, which dynamically routes to `/admin/login`.
 
 ---
-Developed with ❤️ for Ravi Auto Service.
+
+**Design And Developed By:** [DharmaByte](https://dharmendra-vishvkarma.vercel.app/)  
+*Freelance Project formulated specifically for Ravi Auto Service.*
