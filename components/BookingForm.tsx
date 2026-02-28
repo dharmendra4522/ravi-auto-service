@@ -70,6 +70,12 @@ const BookingForm: React.FC<BookingFormProps> = ({ preselectedService }) => {
         }
     }, [preselectedService, setValue]);
 
+    const [minDate, setMinDate] = useState('');
+
+    React.useEffect(() => {
+        setMinDate(new Date().toLocaleDateString('en-CA'));
+    }, []);
+
     const onSubmit = async (data: BookingFormValues) => {
         setLoading(true);
         try {
@@ -91,7 +97,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ preselectedService }) => {
             setLoading(false);
         }
     };
-
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="bg-dark-card border border-white/5 p-8 md:p-12 rounded-[2rem] shadow-2xl space-y-8">
@@ -229,7 +234,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ preselectedService }) => {
                     <input
                         type="date"
                         {...register('preferredDate')}
-                        min={new Date().toLocaleDateString('en-CA')}
+                        min={minDate}
                         className="w-full bg-dark/50 border border-white/10 rounded-xl px-4 py-3 text-light focus:border-primary outline-none transition-all"
                     />
                     {errors.preferredDate && <p className="text-primary text-xs mt-1">{errors.preferredDate.message}</p>}

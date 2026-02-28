@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, animate } from 'framer-motion';
 
 interface Stat {
     label: string;
@@ -11,30 +11,27 @@ interface Stat {
 }
 
 const AnimatedCounter = ({ value, suffix }: { value: number, suffix: string }) => {
-    const [count, setCount] = useState(0);
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
+    const ref = useRef<HTMLSpanElement>(null);
+    const isInView = useInView(ref, { once: true, amount: 0.5 }); // Start when half visible
 
     useEffect(() => {
-        if (isInView) {
-            let start = 0;
-            const end = value;
-            const duration = 2000; // 2 seconds
-            const incrementTime = Math.abs(Math.floor(duration / end));
-
-            const timer = setInterval(() => {
-                start += 1;
-                setCount(start);
-                if (start >= end) clearInterval(timer);
-            }, incrementTime);
-
-            return () => clearInterval(timer);
+        if (isInView && ref.current) {
+            const controls = animate(0, value, {
+                duration: 2.5,
+                ease: "easeOut",
+                onUpdate(v: number) {
+                    if (ref.current) {
+                        ref.current.textContent = Math.round(v) + suffix;
+                    }
+                }
+            });
+            return () => controls.stop();
         }
-    }, [isInView, value]);
+    }, [isInView, value, suffix]);
 
     return (
         <span ref={ref} className="text-4xl md:text-5xl font-heading font-black text-primary italic group-hover:scale-110 transition-transform flex items-center justify-center">
-            {count}{suffix}
+            0{suffix}
         </span>
     );
 };
