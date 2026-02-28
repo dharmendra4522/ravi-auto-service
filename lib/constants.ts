@@ -34,7 +34,7 @@ export const SHOP_INFO: ShopInfo = {
     phone1: process.env.NEXT_PUBLIC_SHOP_PHONE1 || "8097901003",
     phone2: process.env.NEXT_PUBLIC_SHOP_PHONE2 || "8850527356",
     whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "918097901003",
-    email: "raviautoservice@gmail.com",
+    email: "ravindravishwakarma987@gmail.com",
     address: {
         line1: "Shop No. 1243/001, Devghar Ali",
         line2: "40+ Maidan Jawal, Ghansoli Gaon",
@@ -44,8 +44,8 @@ export const SHOP_INFO: ShopInfo = {
         full: process.env.NEXT_PUBLIC_SHOP_ADDRESS || "Shop No. 1243/001, Devghar Ali, 40+ Maidan Jawal, Ghansoli Gaon, Navi Mumbai - 400701"
     },
     workingHours: {
-        weekdays: "Mon – Sat: 9:00 AM – 7:00 PM",
-        sunday: "Sunday: 10:00 AM – 4:00 PM"
+        weekdays: "Mon - Thu, Sat - Sun: 9:00 AM – 10:00 PM",
+        sunday: "Friday: 9:00 AM – 1:00 PM"
     },
     brandsServiced: ["Hero", "Honda", "Yamaha", "Bajaj", "TVS", "Royal Enfield", "KTM", "Suzuki", "Other"],
     googleMapsUrl: process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL || "https://maps.google.com/?q=Ghansoli+Gaon+Navi+Mumbai",
@@ -70,14 +70,14 @@ export const SERVICES: Service[] = [
         name: 'General Servicing',
         description: 'Engine oil change, filter cleaning, chain lubrication and overall checkup.',
         icon: 'wrench',
-        startingPrice: '₹499'
+        startingPrice: '₹1000'
     },
     {
         id: 'engine-repair',
         name: 'Engine Repair',
         description: 'Engine overhaul, piston work, cylinder boring and performance tuning.',
         icon: 'settings',
-        startingPrice: '₹1499'
+        startingPrice: '₹2000'
     },
     {
         id: 'brake-service',

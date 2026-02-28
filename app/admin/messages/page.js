@@ -1,7 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
 import ContactsTable from '@/components/admin/ContactsTable';
-import { X } from 'lucide-react';
+import { X, Trash2 } from 'lucide-react';
+import { toast } from 'react-hot-toast';
 
 export default function ContactsPage() {
     const [contacts, setContacts] = useState([]);
@@ -31,8 +32,16 @@ export default function ContactsPage() {
         fetchContacts();
     }, [page]);
 
-    const handleDelete = async (id) => {
-        if (!confirm('Are you sure you want to delete this message?')) return;
+    const [messageToDelete, setMessageToDelete] = useState(null);
+
+    const handleDelete = (id) => {
+        setMessageToDelete(id);
+    };
+
+    const confirmDelete = async () => {
+        if (!messageToDelete) return;
+        const id = messageToDelete;
+        setMessageToDelete(null);
         try {
             const res = await fetch('/api/admin/messages', {
                 method: 'DELETE',
@@ -40,11 +49,14 @@ export default function ContactsPage() {
                 body: JSON.stringify({ id })
             });
             if (res.ok) {
-                setContacts(contacts.filter(c => c._id !== id));
-                setTotal(t => t - 1);
+                setContacts(prev => prev.filter(item => item._id !== id));
+                setTotal(prev => prev - 1);
+                toast.success('Message deleted');
+            } else {
+                toast.error('Failed to delete message');
             }
         } catch (err) {
-            console.error('Failed to delete contact');
+            toast.error('Failed to delete message');
         }
     };
 
@@ -140,6 +152,32 @@ export default function ContactsPage() {
                                     setSelectedContact(null);
                                 }}
                                 className="px-4 py-2 rounded-lg bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 transition-colors text-sm font-medium"
+                            >
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {messageToDelete && (
+                <div className="fixed inset-0 z-[110] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+                    <div className="bg-[#111111] border border-[#2A2A2A] rounded-2xl w-full max-w-sm p-6 flex flex-col items-center text-center shadow-2xl">
+                        <div className="w-16 h-16 bg-red-500/10 border border-red-500/20 rounded-full flex items-center justify-center mb-4 text-red-500">
+                            <Trash2 size={28} />
+                        </div>
+                        <h3 className="text-xl font-bold text-white mb-2">Delete Message</h3>
+                        <p className="text-gray-400 mb-6 text-sm">Are you sure you want to delete this message? This action cannot be undone.</p>
+                        <div className="flex gap-3 w-full">
+                            <button
+                                onClick={() => setMessageToDelete(null)}
+                                className="flex-1 px-4 py-2.5 rounded-xl border border-[#2A2A2A] bg-[#1A1A1A] hover:bg-[#2A2A2A] text-white transition-colors font-medium text-sm"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                onClick={confirmDelete}
+                                className="flex-1 px-4 py-2.5 rounded-xl bg-[#E63946] hover:bg-red-600 text-white transition-colors font-medium text-sm"
                             >
                                 Delete
                             </button>

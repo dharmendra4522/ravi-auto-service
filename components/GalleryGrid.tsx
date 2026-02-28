@@ -15,14 +15,14 @@ const GalleryGrid: React.FC = () => {
     const [filter, setFilter] = useState('All');
 
     const galleryImages: GalleryImage[] = [
-        { src: 'https://images.unsplash.com/photo-K-zSDkhkXoU?auto=format&fit=crop&q=80', category: 'Workshop', title: 'Main Service Area' },
-        { src: 'https://images.unsplash.com/photo-4ORysIjH-mY?auto=format&fit=crop&q=80', category: 'Bikes', title: 'Cruiser Servicing' },
-        { src: 'https://images.unsplash.com/photo-KxeFuXta4SE?auto=format&fit=crop&q=80', category: 'Team', title: 'Expert Mechanics at Work' },
-        { src: 'https://images.unsplash.com/photo-HfVg8WeUVS0?auto=format&fit=crop&q=80', category: 'Workshop', title: 'Quality Parts' },
-        { src: 'https://images.unsplash.com/photo-7XVivedJlMY?auto=format&fit=crop&q=80', category: 'Workshop', title: 'Our Workshop' },
-        { src: 'https://images.unsplash.com/photo-Hx_LIYPuAW4?auto=format&fit=crop&q=80', category: 'Bikes', title: 'Detailing & Tuning' },
-        { src: 'https://images.unsplash.com/photo-NIV7xNUGMbM?auto=format&fit=crop&q=80', category: 'Before/After', title: 'Restored to Perfection' },
-        { src: 'https://images.unsplash.com/photo-N_2XRC9bbPk?auto=format&fit=crop&q=80', category: 'Bikes', title: 'Vintage Classics' },
+        { src: '/images/workshop1.jpg', category: 'Workshop', title: 'Main Service Area' },
+        { src: '/images/bike1.jpg', category: 'Bikes', title: 'Cruiser Servicing' },
+        { src: '/images/team1.jpg', category: 'Team', title: 'Expert Mechanics at Work' },
+        { src: '/images/workshop2.jpg', category: 'Workshop', title: 'Quality Parts' },
+        { src: '/images/workshop3.jpg', category: 'Workshop', title: 'Our Workshop' },
+        { src: '/images/bike2.jpg', category: 'Bikes', title: 'Performance Sports Bike' },
+        { src: '/images/bike3.jpg', category: 'Bikes', title: 'Engine Tuning' },
+        { src: '/images/workshop4.jpg', category: 'Before/After', title: 'Restored to Perfection' },
     ];
 
     const categories = ['All', 'Workshop', 'Bikes', 'Before/After', 'Team'];

@@ -100,12 +100,12 @@ const Footer: React.FC = () => {
                                 <Clock size={20} className="text-primary shrink-0" />
                                 <div className="flex flex-col gap-2">
                                     <div className="flex flex-col">
-                                        <span className="text-light text-sm font-medium">Mon – Sat</span>
-                                        <span className="text-muted text-xs">9:00 AM – 7:00 PM</span>
+                                        <span className="text-light text-sm font-medium">Mon - Thu, Sat - Sun</span>
+                                        <span className="text-muted text-xs">9:00 AM – 10:00 PM</span>
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="text-light text-sm font-medium">Sunday</span>
-                                        <span className="text-muted text-xs">10:00 AM – 4:00 PM</span>
+                                        <span className="text-light text-sm font-medium">Friday</span>
+                                        <span className="text-muted text-xs">9:00 AM – 1:00 PM</span>
                                     </div>
                                 </div>
                             </li>
@@ -114,8 +114,8 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-muted text-xs">
-                        © {currentYear} {SHOP_INFO.name}. All rights reserved.
+                    <p className="text-muted text-xs flex items-center gap-1">
+                        <Link href="/admin/login" className="cursor-pointer">©</Link> {currentYear} {SHOP_INFO.name}. All rights reserved.
                     </p>
                     <p className="text-muted text-[10px] uppercase tracking-[0.2em] ">
                         Design And Developed By <Link href="https://dharmendra-vishvkarma.vercel.app/" target="_blank" className="hover:text-primary hover:underline transition-colors">DharmaByte</Link>
