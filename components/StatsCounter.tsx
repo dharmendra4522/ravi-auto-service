@@ -1,20 +1,50 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 interface Stat {
     label: string;
-    value: string;
+    value: number;
+    suffix: string;
     desc: string;
 }
 
+const AnimatedCounter = ({ value, suffix }: { value: number, suffix: string }) => {
+    const [count, setCount] = useState(0);
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
+    useEffect(() => {
+        if (isInView) {
+            let start = 0;
+            const end = value;
+            const duration = 2000; // 2 seconds
+            const incrementTime = Math.abs(Math.floor(duration / end));
+
+            const timer = setInterval(() => {
+                start += 1;
+                setCount(start);
+                if (start >= end) clearInterval(timer);
+            }, incrementTime);
+
+            return () => clearInterval(timer);
+        }
+    }, [isInView, value]);
+
+    return (
+        <span ref={ref} className="text-4xl md:text-5xl font-heading font-black text-primary italic group-hover:scale-110 transition-transform flex items-center justify-center">
+            {count}{suffix}
+        </span>
+    );
+};
+
 const StatsCounter: React.FC = () => {
     const stats: Stat[] = [
-        { label: 'Happy Customers', value: '500+', desc: 'And counting...' },
-        { label: 'Years Experience', value: '5+', desc: 'Quality service' },
-        { label: 'Bikes Repaired', value: '1000+', desc: 'All brands' },
-        { label: 'Same Day Service', value: '90%', desc: 'Of all jobs' }
+        { label: 'Happy Customers', value: 500, suffix: '+', desc: 'And counting...' },
+        { label: 'Years Experience', value: 5, suffix: '+', desc: 'Quality service' },
+        { label: 'Bikes Repaired', value: 1000, suffix: '+', desc: 'All brands' },
+        { label: 'Same Day Service', value: 90, suffix: '%', desc: 'Of all jobs' }
     ];
 
     return (
@@ -28,10 +58,8 @@ const StatsCounter: React.FC = () => {
                     viewport={{ once: true }}
                     className="bg-white/5 border border-white/5 p-8 rounded-3xl text-center flex flex-col items-center gap-2 group hover:bg-primary/5 transition-colors"
                 >
-                    <span className="text-4xl md:text-5xl font-heading font-black text-primary italic group-hover:scale-110 transition-transform">
-                        {stat.value}
-                    </span>
-                    <span className="text-light text-sm font-bold uppercase tracking-widest">
+                    <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                    <span className="text-light text-sm font-bold uppercase tracking-widest mt-2">
                         {stat.label}
                     </span>
                     <span className="text-muted text-[10px] uppercase font-medium">
