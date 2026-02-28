@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 248, 249, 250;
+  --background-start-rgb: 26, 26, 46;
+  --background-end-rgb: 22, 33, 62;
+}
+
+@layer base {
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-2xl;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/20 rounded-full border-2 border-dark hover:bg-primary/40 transition-colors;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4,
+.font-heading {
+  font-family: var(--font-rajdhani), sans-serif;
+}
+
+/* Swiper Carousel Styles */
+.swiper-pagination-bullet {
+  background: #E63946 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #E63946 !important;
+  width: 24px !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #E63946 !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px !important;
+  font-weight: bold !important;
+}
