@@ -117,8 +117,8 @@ const Footer: React.FC = () => {
                     <p className="text-muted text-xs">
                         © {currentYear} {SHOP_INFO.name}. All rights reserved.
                     </p>
-                    <p className="text-muted text-[10px] uppercase tracking-[0.2em]">
-                        Developed with ❤️ for Bike Lovers
+                    <p className="text-muted text-[10px] uppercase tracking-[0.2em] ">
+                        Design And Developed By <Link href="https://dharmendra-vishvkarma.vercel.app/" target="_blank" className="hover:text-primary hover:underline transition-colors">DharmaByte</Link>
                     </p>
                 </div>
             </div>

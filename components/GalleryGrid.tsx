@@ -15,14 +15,14 @@ const GalleryGrid: React.FC = () => {
     const [filter, setFilter] = useState('All');
 
     const galleryImages: GalleryImage[] = [
-        { src: 'https://images.unsplash.com/photo-1558981403-c5f91cbba527?auto=format&fit=crop&q=80', category: 'Workshop', title: 'Main Service Area' },
-        { src: 'https://images.unsplash.com/photo-1449495169669-7b118f960237?auto=format&fit=crop&q=80', category: 'Bikes', title: 'Vintage Restoration' },
-        { src: 'https://images.unsplash.com/photo-1615172282427-9a57ef2d142e?auto=format&fit=crop&q=80', category: 'Workshop', title: 'Engine Tuning' },
-        { src: 'https://images.unsplash.com/photo-1591438122444-06c00634919d?auto=format&fit=crop&q=80', category: 'Team', title: 'Our Expert Mechanic' },
-        { src: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80', category: 'Bikes', title: 'Performance Sports Bike' },
-        { src: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6?auto=format&fit=crop&q=80', category: 'Bikes', title: 'Daily Commuter' },
-        { src: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80', category: 'Workshop', title: 'Tool Precision' },
-        { src: 'https://images.unsplash.com/photo-1579450424103-62544ec78207?auto=format&fit=crop&q=80', category: 'Before/After', title: 'Body Painting Result' },
+        { src: 'https://images.unsplash.com/photo-K-zSDkhkXoU?auto=format&fit=crop&q=80', category: 'Workshop', title: 'Main Service Area' },
+        { src: 'https://images.unsplash.com/photo-4ORysIjH-mY?auto=format&fit=crop&q=80', category: 'Bikes', title: 'Cruiser Servicing' },
+        { src: 'https://images.unsplash.com/photo-KxeFuXta4SE?auto=format&fit=crop&q=80', category: 'Team', title: 'Expert Mechanics at Work' },
+        { src: 'https://images.unsplash.com/photo-HfVg8WeUVS0?auto=format&fit=crop&q=80', category: 'Workshop', title: 'Quality Parts' },
+        { src: 'https://images.unsplash.com/photo-7XVivedJlMY?auto=format&fit=crop&q=80', category: 'Workshop', title: 'Our Workshop' },
+        { src: 'https://images.unsplash.com/photo-Hx_LIYPuAW4?auto=format&fit=crop&q=80', category: 'Bikes', title: 'Detailing & Tuning' },
+        { src: 'https://images.unsplash.com/photo-NIV7xNUGMbM?auto=format&fit=crop&q=80', category: 'Before/After', title: 'Restored to Perfection' },
+        { src: 'https://images.unsplash.com/photo-N_2XRC9bbPk?auto=format&fit=crop&q=80', category: 'Bikes', title: 'Vintage Classics' },
     ];
 
     const categories = ['All', 'Workshop', 'Bikes', 'Before/After', 'Team'];
